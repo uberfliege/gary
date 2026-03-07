@@ -1,0 +1,1304 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Gary A Longoria</title>
+
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{position:fixed;width:100%;height:100%;overflow:hidden;background:black}
+
+/* ---------- SCENE ---------- */
+#scene{
+    position:relative;
+    width:100%;
+    height:100%;
+    
+}
+
+/* ---------- CINEMATIC BACKGROUND ---------- */
+#bgVideo{
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  z-index:-1;
+}
+
+
+/* ---------- LOGO ---------- */
+
+#shadlogo{
+    position:absolute;
+    margin-left: -300px;
+    margin-top: -180px;
+    
+    opacity:0;
+    scale: .8;
+    z-index: 10;
+    animation:logoIn 2s ease forwards;
+    
+}
+#shad{
+    scale: .8;
+    position: absolute;
+    margin-top: -190px;
+    margin-left: -300px;
+}
+#siteshad{
+    position: absolute;
+    margin-left: 700px;
+    margin-top: 250px;
+    z-index: 20;
+   
+}
+#logo{
+    position:absolute;
+    top:220px;right:200px;
+    width:140px;
+    opacity:0;
+    scale: 1;
+    transform:rotate(-180deg);
+    animation:logoIn 2s ease forwards;
+    z-index:30;
+}
+@keyframes logoIn{to{opacity:1;transform:rotate(0)}}
+
+/* ---------- CENTER ---------- */
+#center{
+    position:absolute;
+    top:55%;
+    left:80%;
+    transform:translate(-50%,-50%);
+    width:420px;height:420px;
+    z-index:40;
+}
+
+.float{
+    position:absolute;
+    width:160px;
+    cursor:pointer;
+}
+#fl1{
+    transform:translateX(-50%);
+    scale: 1.3;
+    margin-left: 300px;
+    margin-top: 100px;
+
+}
+#fl2{
+    
+    margin-left: 50px;
+    margin-top: 50px;
+    scale: 1;
+    transform: rotate(30deg);
+}
+#fl3{
+    margin-top: -140px;
+    margin-left: 160px;
+    transform: rotate(90deg);
+    
+}
+
+
+/* ---------- FLOW ---------- */
+.flow{
+    position:absolute;
+    margin-top: 25px;
+    margin-left: 300px;
+    transform:translateX(-50%);
+    width:160px;
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s;
+    z-index:50;
+    scale: 1.5;
+}
+.flow.active{opacity:1}
+
+#flow2{
+    position:absolute;
+    margin-top: 75px;
+    margin-left: 320px;
+    
+    
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s;
+    z-index:60;
+    scale: 2.5;
+}
+#flow2.active{opacity:1}
+
+#flow3{
+    position:absolute;
+    
+    margin-top: -120px;
+    left:90px;
+    
+    
+    
+    
+    pointer-events:none;
+    opacity:0;
+    transition:opacity .3s;
+    z-index:70;
+    scale: 2;
+}
+#flow3.active{opacity:1}
+
+/* ---------- MENU ---------- */
+#menu{
+    position:absolute;
+    bottom:600px;
+    right:700px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s;
+    z-index:80;
+    scale: 1.3;
+    transform: rotate(-15deg);
+    
+}
+#menu.active{opacity:1;pointer-events:auto}
+.menu-btn{width:160px;cursor:pointer}
+
+#menu2{
+    position:absolute;
+    bottom:600px;
+    right:700px;
+    display:flex;
+    flex-direction:column;
+    gap:5px;
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s;
+    z-index:80;
+    scale:1.2;
+    transform: rotate(-15deg);
+    
+}
+#menu2.active{opacity:1;pointer-events:auto}
+.menu2-btn{width:160px;cursor:pointer}
+
+#cache{
+    position:absolute;
+    bottom:100px;
+    right:100px;
+    display:flex;
+    flex-direction:column;
+    
+    opacity:0;
+    pointer-events:none;
+    transition:opacity .3s;
+    z-index:80;
+    scale:1; 
+    
+}
+
+
+                                /* ---------- GATHER BUTTONS---------- */
+
+#diazbutton{
+    position: absolute;
+    scale:.3;
+    transition: transform 0.3s ease-in-out;
+    margin-left: 100px;
+    margin-top: -40px;
+    z-index: 10;
+}
+#diazbutton:hover{
+    transform: scale(2);
+    
+}
+
+#blackiebutton{
+    position: absolute;
+    z-index: 20;
+    scale: .3;
+    margin-left: 150px;
+    margin-top: -50px;
+    transition: transform 0.3s ease-in-out;
+}
+#blackiebutton:hover{
+    transform: scale(2);
+}
+#alexisbutton{
+    position: absolute;
+    z-index: 30;
+    scale: .3;
+    margin-left: 200px;
+    margin-top: -20px;
+     transition: transform 0.3s ease-in-out;
+}
+#alexisbutton:hover{
+    transform: scale(2);
+}
+#jackbutton{
+    position: absolute;
+    z-index: 40;
+    scale: .3;
+    margin-left: 100px;
+    margin-top: 10px;
+     transition: transform 0.3s ease-in-out; 
+}
+#jackbutton:hover{
+    transform: scale(2);
+}
+#longoriabutton{
+    position: absolute;
+    scale:.3;
+    margin-left: 160px;
+    margin-top: 10px;
+    z-index: 50;
+     transition: transform 0.3s ease-in-out;
+
+}
+#longoriabutton:hover{
+    transform: scale(2);
+}
+#prestinbutton{
+    position: absolute;
+    z-index: 90;
+    scale: .3;
+    margin-left: 120px;
+    margin-top: -100px;
+     transition: transform 0.3s ease-in-out; 
+}
+#prestinbutton:hover{
+    transform: scale(2);
+}
+#natebutton{
+    position: absolute;
+    z-index: 100;
+    scale: .3;
+    margin-left: 80px;
+    margin-top: 60px;
+     transition: transform 0.3s ease-in-out; 
+}
+#natebutton:hover{
+    transform: scale(2);
+}
+#head{
+    position: absolute;
+    z-index: 10;
+    scale: .6;
+    margin-left: 30px;
+    margin-bottom: -60px;
+    transform: rotate(30deg);
+    opacity: .8;
+    
+    
+
+}
+#head:hover{
+    transform: scale(.9);
+}
+#believe{
+    scale: .5;
+    position: absolute;
+    z-index: 20;
+    margin-left: 90px;
+    margin-top: 100px;
+    transform: rotate(30deg);
+    opacity: .8;
+    
+}
+
+#design{
+    position: absolute;
+    z-index: 30;
+    scale: .5;
+    margin-left: 0px;
+    margin-top: 150px;
+    opacity: .8;
+
+    
+    
+}
+
+#projects{
+    position: absolute;
+    z-index: 40;
+    scale: .5;
+    scale: .5;
+    margin-left: 20px;
+    margin-top: 250px;
+    opacity: .8;
+    
+    
+    
+}
+/* ---------- CAROUSEL ---------- */
+#carousel{
+    position:absolute;
+    margin-top:155px;
+    margin-left: 0px;
+    width:65vw;       /* adjust here instead */
+    height:55vh;
+    background:rgba(0,0,0,0);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    z-index:200;
+    
+}
+
+#carousel.active{display:flex}
+#carousel img,#carousel video{
+    max-width:100%;max-height:100%
+}
+#carousel > img,
+#carousel > video{
+  position:relative;
+  z-index:1;
+}
+
+
+
+.nav{
+    position:absolute;
+    top:50%;
+    transform:translateY(-50%);
+    font-size:32px;
+    color:white;
+    cursor:pointer;
+}
+#prev{left:200px}
+#next{right:250px}
+.overlay{
+  position:absolute;
+  bottom:40px;
+  left:50%;
+  transform:translateX(-50%);
+  display:none;
+  gap:20px;
+  z-index:10;
+  pointer-events: auto;
+}
+
+
+
+
+
+#mediaLayer{
+  position: relative;
+  z-index: 1;
+  
+
+}
+
+#mediaLayer img,
+#mediaLayer video{
+  
+    
+  pointer-events: none;
+}
+
+
+
+
+.social-btn{
+  width: 40px;
+  
+  
+  
+  cursor: pointer;
+}
+.nav{
+  pointer-events: auto;
+}
+#diazOverlay{
+ 
+  align-items: center;
+  width: 600px;
+  height: 600px;
+}
+#instadiaz{
+ 
+  scale: .6;
+  position: absolute;
+  z-index: 10;
+  margin-left: 150px;
+
+  
+}
+#aclogo{
+    position: absolute;
+    z-index: 20;
+    scale: .5;
+    
+    
+    
+}
+#mcjlogo{
+ 
+  position: absolute;
+  z-index: 20;
+   
+    
+}
+#cloudlogoblack{
+    position: absolute;
+    scale: .4;
+    z-index: 10;
+    margin-top: 290px;
+    margin-left: 20px;
+    
+ 
+
+}
+#spotyblack{
+    position: absolute;
+    scale: .5;
+    z-index: 20;
+    margin-top: 180px;
+}
+
+
+#blackieOverlay{
+  
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  margin-top: 200px;
+}
+#alexisOverlay{
+ 
+  align-items: center;
+  width: 600px;
+  height: 600px;
+}
+#instaalexis{
+  margin-left: 280px;
+  scale: .6;
+  position: absolute;
+  z-index: 10;
+}
+#spotyalexis{
+  position: absolute;
+  z-index: 20;
+  margin-left: 235px;
+  margin-top: 200px;
+  scale: .6;
+}
+#dbl{
+  position: absolute;
+  z-index: 30;
+  scale: .6;
+  margin-left: 250px;
+  margin-top: 100px;
+}
+#instalong{
+  position: absolute;
+  z-index: 30;
+  scale: .4;
+  
+  margin-left: 230px;
+  margin-top: -80px;
+}
+#spotylong{
+   scale: .6;
+   position:absolute;
+   margin-left: 185px;
+   margin-top: 120px;
+  
+}
+#longOverlay{
+ 
+  align-items: center;
+  width: 600px;
+  height: 600px;
+  
+  margin-left: 35px;
+}
+#wedbutton{
+    position: absolute;
+    z-index: 60;
+    scale: .5;
+    margin-left: 20px;
+    margin-top: 320px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(15deg); 
+}
+#wedbutton:hover{
+    transform: scale(1.5);
+}
+#forumbutton{
+    position: absolute;
+    z-index: 70;
+    scale: .5;
+    margin-left: 100px;
+    margin-top: 355px;
+     transition: transform 0.3s ease-in-out;
+     transform: rotate(10deg); 
+}
+#forumbutton:hover{
+    transform: scale(1.5);
+}
+#andrewbutton{
+    position: absolute;
+    z-index: 60;
+    scale: .35;
+    margin-left: 200px;
+    margin-top: 50px;
+    transition: transform 0.3s ease-in-out;
+    transform: rotate(15deg); 
+}
+#andrewbutton:hover{
+    transform: scale(1.5);
+}
+#togmail{
+  scale: .15;
+  margin-top: 300px;
+  margin-left: 125px;
+  
+}
+#togmail:hover{
+    transform: scale(1.5);
+}
+
+#triangle{
+  position: absolute;
+  z-index: -10;
+  margin-left: -850px;
+  margin-top: -400px;
+  scale: .5;
+  transform: rotate(14deg);
+}
+#instanate{
+  position: absolute;
+  z-index: 30;
+  scale: .4;
+  
+  margin-left: 295px;
+  margin-top: -100px;
+ 
+}
+#bandnate{
+  position: absolute;
+  z-index: 40;
+  scale: .4;
+  
+  margin-left: -50px;
+  margin-top: -70px;
+}
+#spotynate{
+  position: relative;
+  z-index: 50;
+  scale: .5;
+  margin-left: 250px;
+
+  
+  
+}
+#instaprestin{
+  position: absolute;
+  z-index: 30;
+  scale: 1.5;
+  margin-left: -150px;
+  margin-top: 25px;
+}
+#andrew{
+  
+  scale:2;
+}
+#andrewOverlay{
+  margin-bottom: -30px;
+  position: absolute;
+}
+#cache2{
+  position: absolute;
+  z-index: -200;
+  margin-left: -1200px;
+  margin-top: -200px;
+  opacity: .5;
+  scale: 1.1;
+  
+}
+#tv{
+  position: absolute;
+  transform: translate(-920px,-900px);
+  z-index: -200;
+
+  /* Fade right edge */
+  -webkit-mask-image: linear-gradient(to right, 
+      black 60%, 
+      transparent 100%);
+  mask-image: linear-gradient(to right, 
+      black 60%, 
+      transparent 100%);
+}
+
+#menu3{
+    position:absolute;
+    opacity:0;
+    pointer-events:none;
+    margin-top: -150px;
+    margin-left: -100px;
+}
+
+#menu3.active{
+    opacity:1;
+    pointer-events:auto;
+}
+#storybook{
+    position: absolute;
+  margin-left: -830px;
+  margin-top: -420px;
+  z-index: -200;
+  scale: .6;
+  transform: rotate(15deg);
+
+  /* Fade right edge */
+  -webkit-mask-image: linear-gradient(to right, 
+      black 80%, 
+      transparent 100%);
+  mask-image: linear-gradient(to right, 
+      black 80%, 
+      transparent 100%);
+}
+
+/* ---------- MUSIC TOGGLE ---------- */
+#musicToggle{
+  position:absolute;
+  margin-left:220px;     
+  margin-top:330px;      
+  font-size:28px;
+  color:white;
+  cursor:pointer;
+  opacity:1;            
+  transition:opacity .4s ease;
+  z-index:150;
+  user-select:none;
+  scale: 1.5;
+}
+
+/* ACTIVE STATE */
+#musicToggle.active{
+  opacity:0.5;
+  animation: pulseGlow 4s ease-in-out infinite;
+}
+#musicToggle:hover{
+    transform: scale(1.5);
+}
+#enterGate{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:#434242;
+display:flex;
+align-items:center;
+justify-content:center;
+z-index:9999;
+transition:opacity 1s ease;
+}
+
+#enterButton{
+color:white;
+font-size:22px;
+letter-spacing:8px;
+cursor:pointer;
+opacity:.85;
+scale: .6;
+margin-top: -200px;
+
+transition:all .6s ease;
+}
+
+#enterButton:hover{
+opacity:1;
+scale: .6;
+transform:scale(1.1);
+}
+#garyenterlogo{
+cursor:pointer;
+display:block;
+}
+
+/* Slow pulse + glow */
+@keyframes pulseGlow{
+  0%{
+    transform: scale(1);
+    text-shadow: 0 0 4px rgba(255,255,255,0.4),
+                 0 0 8px rgba(255,255,255,0.2);
+  }
+  50%{
+    transform: scale(1.08);
+    text-shadow: 0 0 10px rgba(255,255,255,0.8),
+                 0 0 20px rgba(255,255,255,0.4);
+  }
+  100%{
+    transform: scale(1);
+    text-shadow: 0 0 4px rgba(255,255,255,0.4),
+                 0 0 8px rgba(255,255,255,0.2);
+  }
+}
+
+
+
+
+
+
+
+
+</style>
+</head>
+
+<body>
+
+<div id="enterGate">
+    <div id="enterButton">
+      <img src="assets/garyenterlogo.png" id="garyenterlogo">
+    </div>
+</div>  
+
+<!-- AUDIO -->
+ 
+<audio id="ambient" loop>
+    <source src="assets/hero.mp3" type="audio/mpeg">
+</audio>
+
+<div id="scene">
+<video id="bgVideo" muted playsinline preload="none"></video>  
+<img src="assets/shadlogo.png" id="shadlogo">
+<img src="assets/shadsite.png" id="shad"> 
+<img src="assets/shadlow.png" id="siteshad"> 
+
+    
+<img src="assets/logo.png" id="logo">
+
+
+
+
+<div id="center">
+<img src="assets/fl1.gif" id="fl1" class="float">
+
+<img src="assets/flow.gif" id="flow1" class="flow">
+
+
+<img src="assets/fl2.gif" id="fl2" class="float">
+<img src="assets/gather.gif" id="flow2" class="flow">
+<img src="assets/fl3.gif" id="fl3" class="float">
+<img src="assets/gcache.gif" id="flow3" class="flow">
+<div id="musicToggle">𝄞</div>
+<a href="mailto:garyalongoria@pm.me"class="ui-item">
+   <img src="assets/mail.png" id="togmail" class="togmail">
+</a>
+
+
+<video id="tv" playsinline preload="none"></video>
+
+
+  
+
+
+
+</div>
+
+<div id="menu">
+<img src="assets/head.gif" id="head" class="menu-btn" data-set="head">
+<img src="assets/believe.png" id="believe" class="menu-btn" data-set="believe">
+<img src="assets/design.png" id="design" class="menu-btn" data-set="design">
+<img src="assets/hightimes.png" id="storybook"  data-set="story">
+
+</div>
+
+<div id="menu2">
+
+<img src="assets/diazbutton.png" id="diazbutton" class="menu-btn" data-set="diaz">
+<img src="assets/longoriabutton.png" id="longoriabutton" class="menu-btn" data-set="longoria">
+
+<img src="assets/jackbutton.png" id="jackbutton" class="menu-btn" data-set="jack">
+<img src="assets/alexisbutton.png" id="alexisbutton" class="menu-btn" data-set="alexis">
+<img src="assets/blackiebutton.png" id="blackiebutton" class="menu-btn" data-set="blackie">
+<a href="https://www.youtube.com/watch?v=97wNpiQnmJQ" target="_blank">
+        <img src="assets/wedding.png" id="wedbutton" alt="wedding">
+</a>
+
+<img src="assets/forum.png" id="forumbutton" class="menu-btn" data-set="forum">
+<img src="assets/natebutton.png" id="natebutton" class="menu-btn" data-set="nate">
+<img src="assets/prestonbutton.png" id="prestinbutton" class="menu-btn" data-set="prestin">
+<img src="assets/andrewbutton.png" id="andrewbutton" class="menu-btn" data-set="andrew">
+<img src="assets/triangle.png" id="triangle">
+</div>
+
+<div id="menu3">
+  <img src="assets/gchache.png" id="gchachehold">
+</div>
+
+
+<div id="carousel">
+
+  <div id="mediaLayer"></div>
+  <!----------
+  <div id="prev" class="nav">‹</div>
+  <div id="next" class="nav">›</div>
+  ---------->
+  <div class="overlay" id="diazOverlay">
+    <a href="https://www.instagram.com/r.m.diaz/" target="_blank">
+      <img src="assets/insta.png" id="instadiaz" alt="Instagram">
+    </a>
+    <a href="https://open.spotify.com/artist/2MdicVi9uN2pdDzE0ZhACG" target="_blank">
+      <img src="assets/aclogo.png" id="aclogo" alt="spotify">
+    </a>
+  </div>
+
+  <div class="overlay" id="jackOverlay">
+    <a href="https://www.instagram.com/jacklorang/?hl=en" target="_blank">
+        <img src="assets/insta.png" id="instajack" alt="Instagram">
+    </a>
+    <a href="https://open.spotify.com/artist/03FZXqhtHEqTNluN5XpZTh" target="_blank">
+        <img src="assets/mcjspot.png" id="mcjlogo" alt="spotify">
+    </a>
+  </div>
+  <div class="overlay" id="blackieOverlay">
+    <a href="https://www.soundcloud.com/blackie-valentino" target="_blank">
+        <img src="assets/cloudlogo.png" id="cloudlogoblack" alt="soundcloud">
+    </a>
+    <a href="https://open.spotify.com/album/77nG35CfzYAPCWEnJqZyg6" target="_blank">
+        <img src="assets/spotylogo.png" id="spotyblack" alt="spotify">
+    </a>
+  </div>
+  <div class="overlay" id="alexisOverlay">
+    <a href="https://www.instagram.com/alexis_hope/?hl=en" target="_blank">
+        <img src="assets/insta.png" id="instaalexis" alt="instagram">
+    </a>
+  
+   <a href="https://www.instagram.com/reel/DGfU59xxUd3/" target="_blank">
+        <img src="assets/dbl.png" id="dbl" alt="doublebitch">
+    </a>
+  </div>
+  <div class="overlay" id="longOverlay">
+    <!----------
+    <a href="https://www.instagram.com/jacklorang/?hl=en" target="_blank">
+        <img src="assets/insta.png" id="instalong" alt="Instagram">
+    </a>
+    ----------->
+    <a href="https://open.spotify.com/artist/3m54fBYplhHrnYEvwNyS99" target="_blank">
+        <img src="assets/spotylogo.png" id="spotylong" alt="spotify">
+    </a>
+
+  </div>
+  <div class="overlay" id="nateOverlay">
+    <a href="https://www.instagram.com/nateportermusic/?hl=en" target="_blank">
+        <img src="assets/insta.png" id="instanate" alt="Instagram">
+    </a>
+    <a href="https://open.spotify.com/artist/6hlh3mQAHbOdZGjZJ8jAFT" target="_blank">
+        <img src="assets/spotylogo.png" id="spotynate" alt="spotify">
+    </a>
+    <a href="https://nateporter.bandcamp.com/" target="_blank">
+        <img src="assets/bandcamplogo.png" id="bandnate" alt="bandcamp">
+    </a>
+
+  </div>
+  <div class="overlay" id="prestinOverlay">
+    <a href="https://www.instagram.com/prestinmyles/?hl=en" target="_blank">
+        <img src="assets/prestonbutton.png" id="instaprestin" alt="Instagram">
+    </a>
+    <a href="https://flowerchildcoffee.com/" target="_blank">
+        <img src="assets/flowerchild.png" id="flowerchild" alt="coffee">
+    </a>
+   
+
+  </div>
+<div class="overlay" id="andrewOverlay">
+     <a href="https://andrewpitrone.com/" target="_blank">
+        <img src="assets/andrew.png" id="andrew" alt="andrew">
+    </a>
+   
+
+  </div>
+
+
+
+</div>
+<script>
+let active = false;
+const fl1=document.getElementById("fl1");
+const flow=document.getElementById("flow1");
+const fl2=document.getElementById("fl2");
+const fl3=document.getElementById("fl3");
+const flow2=document.getElementById("flow2");
+const flow3=document.getElementById("flow3");
+const menu=document.getElementById("menu");
+const menu2=document.getElementById("menu2");
+const audio=document.getElementById("ambient");
+const menu3=document.getElementById("menu3");
+const tv = document.getElementById("tv");
+const musicToggle = document.getElementById("musicToggle");
+let musicOn = false;
+const bgVideo = document.getElementById("bgVideo");
+const enterGate = document.getElementById("enterGate");
+const enterButton = document.getElementById("enterButton");
+enterButton.addEventListener("click", () => {
+
+    /* start background video immediately */
+    bgVideo.src = "assets/bg.mp4";
+    bgVideo.play();
+
+    /* opening TV video */
+    tv.src = "assets/open_2_1.mp4";
+    tv.muted = false;
+    tv.style.display = "block";
+    tv.play();
+
+    /* start ambient music */
+    audio.volume = 0.6;
+    audio.play().catch(()=>{});
+    musicToggle.classList.add("active");
+    musicOn = true;
+
+    /* remove enter overlay */
+    enterGate.style.opacity = "0";
+
+    setTimeout(()=>{
+        enterGate.remove();
+    },1000);
+
+});
+
+bgVideo.addEventListener("canplay", () => {
+    bgVideo.classList.add("loaded");
+});
+
+
+function unloadTV() {
+    if (!tv) return;
+    tv.pause();              // stop playback
+    tv.removeAttribute("src"); // remove source
+    tv.load();               // force browser to unload it
+    tv.style.display = "none"; // optional: hide it visually
+}
+
+
+
+/* ---------- AUDIO SAFE START ---------- */
+document.body.addEventListener("pointerdown",()=>audio.volume=0,{once:true});
+
+function unloadCarousel() {
+
+    // Stop any playing video inside carousel
+    const videos = carousel.querySelectorAll("video");
+    videos.forEach(v => {
+        v.pause();
+        v.removeAttribute("src");
+        v.load();
+    });
+
+    // Clear media
+    const mediaLayer = document.getElementById("mediaLayer");
+    mediaLayer.innerHTML = "";
+
+    // Hide overlays
+    document.querySelectorAll(".overlay").forEach(o => {
+        o.style.display = "none";
+    });
+
+    // Hide carousel
+    carousel.classList.remove("active");
+
+    // Reset set
+    currentSet = [];
+    index = 0;
+}
+
+/* ---------- FL1 INTERACTION ---------- */
+fl1.addEventListener("pointerenter",()=>{
+    if(active) return;
+    fl1.src="assets/fl1a.gif";
+    flow.src="assets/flow.gif";
+    flow.classList.add("active");
+    
+});
+
+fl1.addEventListener("pointerleave",()=>{
+    if(active) return;
+    fl1.src="assets/fl1.gif";
+    
+    setTimeout(()=>flow.classList.remove("active"),300);
+    
+});
+fl1.addEventListener("click",()=>{
+    unloadTV();
+    unloadCarousel();   // <<< ADD THIS
+    closeAllMenus();
+    menu.classList.add("active");
+});
+
+
+
+/* ---------- FL2 INTERACTION ---------- */
+fl2.addEventListener("pointerenter",()=>{
+    if(active) return;
+    fl2.src="assets/fl2.gif";
+    flow2.src="assets/gather.gif";
+    flow2.classList.add("active");
+    
+});
+
+fl2.addEventListener("pointerleave",()=>{
+    if(active) return;
+    fl2.src="assets/fl2.gif";
+    
+    setTimeout(()=>flow2.classList.remove("active"),300);
+    
+});
+
+fl2.addEventListener("click",()=>{
+    unloadTV();
+    unloadCarousel();   // <<< ADD THIS
+    closeAllMenus();
+    menu2.classList.add("active");
+});
+
+
+
+
+/* ---------- FL3 INTERACTION ---------- */
+fl3.addEventListener("pointerenter",()=>{
+    if(active) return;
+    fl3.src="assets/fl3.gif";
+    flow3.src="assets/gcache.gif";
+    flow3.classList.add("active");
+    
+});
+
+fl3.addEventListener("pointerleave",()=>{
+    if(active) return;
+    fl3.src="assets/fl3.gif";
+    
+    setTimeout(()=>flow3.classList.remove("active"),300);
+    
+});
+
+fl3.addEventListener("click",()=>{
+    unloadTV();
+    unloadCarousel();   // <<< ADD THIS
+    closeAllMenus();
+    menu3.classList.add("active");
+});
+
+
+function closeAllMenus(){
+    menu.classList.remove("active");
+    menu2.classList.remove("active");
+    menu3.classList.remove("active");
+}
+
+/* ---------- MUSIC TOGGLE ---------- */
+musicToggle.addEventListener("click", () => {
+
+    if (!musicOn) {
+        audio.volume = 0.6;
+        audio.play();
+        musicToggle.classList.add("active");
+        musicOn = true;
+    } else {
+        audio.pause();
+        musicToggle.classList.remove("active");
+        musicOn = false;
+    }
+
+});/* ---------- MUSIC TOGGLE ---------- */
+musicToggle.addEventListener("click", () => {
+
+    if (!musicOn) {
+        audio.volume = 0.6;
+        audio.play();
+        musicToggle.classList.add("active");
+        musicOn = true;
+    } else {
+        audio.pause();
+        musicToggle.classList.remove("active");
+        musicOn = false;
+    }
+
+});/* ---------- MUSIC TOGGLE ---------- */
+musicToggle.addEventListener("click", () => {
+
+    if (!musicOn) {
+        audio.volume = 0.6;
+        audio.play();
+        musicToggle.classList.add("active");
+        musicOn = true;
+    } else {
+        audio.pause();
+        musicToggle.classList.remove("active");
+        musicOn = false;
+    }
+
+});
+
+/* ---------- CAROUSEL ---------- */
+
+const sets = {
+  
+  head: [
+    { type: "image", media: "assets/hdg.png" }
+  ],
+  believe: [
+    { type: "video", media: "assets/hd1.mp4" }
+  ],
+  design: [
+    { type: "image", media: "assets/media/d1.jpg" }
+  ],
+  blackie: [
+    { type: "scene", 
+    media: "assets/blackie.png",
+    overlay: "blackieOverlay",
+ }
+  ],
+  longoria: [
+    { type: "scene", media: "assets/longoria.png", overlay:"longOverlay", }
+  ],
+  diaz: [
+    {
+      type: "scene",
+      media: "assets/diaz.png",
+      overlay: "diazOverlay",
+    }
+  ],
+  alexis: [
+    {type: "scene",
+     media: "assets/alexis.png",
+     overlay: "alexisOverlay", }
+  ],
+  jack: [
+    { type: "scene", 
+      media: "assets/jack.png",
+      overlay: "jackOverlay",
+     }
+  ],
+    nate: [
+    { type: "scene", 
+      media: "assets/nate.png",
+      overlay: "nateOverlay",
+     }
+  ],
+      nate: [
+    { type: "scene", 
+      media: "assets/nate.png",
+      overlay: "nateOverlay",
+     }
+  ],    
+      prestin: [
+    { type: "scene", 
+      media: "assets/prestin.png",
+      overlay: "prestinOverlay",
+     }
+  ],
+       andrew: [
+    { type: "scene", 
+      media: "assets/andrew.png",
+      overlay: "andrewOverlay",
+     }
+  ],
+      menu3: [
+     { type: "image", media: "assets/gcache.png" }
+  ]
+};
+
+
+
+let currentSet = [];
+let index = 0;
+const carousel = document.getElementById("carousel");
+
+function hideOverlays(){
+  document.querySelectorAll(".overlay").forEach(o=>{
+    o.style.display = "none";
+  });
+}
+
+
+
+
+document.querySelectorAll(".menu-btn").forEach(btn => {
+  btn.onclick = () => {
+    const key = btn.dataset.set;
+    if (!sets[key]) return;
+
+    history.replaceState(null, "", "#" + key);
+    currentSet = sets[key];
+    index = 0;
+    show();
+    carousel.classList.add("active");
+  };
+});
+prev.onclick = () => {
+  if (!currentSet.length) return;
+  index = (index - 1 + currentSet.length) % currentSet.length;
+  show();
+};
+
+next.onclick = () => {
+  if (!currentSet.length) return;
+  index = (index + 1) % currentSet.length;
+  show();
+};
+
+
+function show() {
+  const mediaLayer = document.getElementById("mediaLayer");
+    mediaLayer.innerHTML = "";
+
+  hideOverlays();
+
+  const item = currentSet[index];
+  let el;
+
+  if (item.type === "scene") {
+    // media
+    if (item.media.endsWith(".mp4")) {
+      el = document.createElement("video");
+      el.src = item.media;
+      el.autoplay = el.loop = el.muted = true;
+    } else {
+      el = document.createElement("img");
+      el.src = item.media;
+    }
+
+    mediaLayer.appendChild(el);
+
+
+    // overlay
+    if (item.overlay) {
+      const overlay = document.getElementById(item.overlay);
+      overlay.style.display = "flex";
+    }
+
+  } else {
+    el = document.createElement("img");
+    el.src = item.media;
+    mediaLayer.appendChild(el);
+
+  }
+}
+
+
+
+
+
+/* ---------- DEEP LINK ---------- */
+const key = location.hash.replace("#", "");
+if (sets[key]) {
+    history.replaceState(null, "", "#" + key);
+    menu.classList.add("active");
+    set = sets[key];
+    show();
+    carousel.classList.add("active");
+}
+
+
+
+</script>
+
+</body>
+</html>
